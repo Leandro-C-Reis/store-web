@@ -1,3 +1,4 @@
+import 'tailwindcss/tailwind.css';
 import Header from '@/components/header';
 
 const Home = () => {
