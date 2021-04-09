@@ -8,7 +8,7 @@ import SearchIcon from '@/public/assets/search';
 const Header = () => {
     return (
         <header
-            className="w-full h-100px bg-white m-0 p-0 border-b border-gray-400 flex font-ubuntu fixed">
+            className="w-full h-100px bg-white m-0 p-0 border-b border-gray-400 flex font-ubuntu z-10 sticky top-0">
             <div className="container bg-white mx-auto px-10 flex items-center justify-evenly">
                 <Link href="/">
                     <a className="bg-white w-300px h-60px border text-center">
