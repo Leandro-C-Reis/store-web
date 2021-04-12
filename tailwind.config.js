@@ -6,6 +6,7 @@ module.exports = {
       width: {
         '500px': '500px',
         '300px': '300px',
+        '180px': '180px',
         '160px': '160px',
         '90px': '90px',
         '24px': '24px',

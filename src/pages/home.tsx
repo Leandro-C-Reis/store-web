@@ -10,10 +10,10 @@ const Home = () => {
     return (
         <div className="bg-gray-100">
             <Header/>
-            <ProductList Title="Mais Vendidos" Icon={MoreSellerIcon} Items={[]}/>
-            <ProductList Title="Melhores Avaliações" Icon={MoreSellerIcon} Items={[]}/>
-            <ProductList Title="Novos Produtos" Icon={MoreSellerIcon} Items={[]}/>
-            <ProductList Title="Queima de Etoque" Icon={MoreSellerIcon} Items={[]}/>
+            <ProductList Id="1" Title="Mais Vendidos" Icon={MoreSellerIcon} Items={[]}/>
+            <ProductList Id="2" Title="Melhores Avaliações" Icon={MoreSellerIcon} Items={[]}/>
+            <ProductList Id="3" Title="Novos Produtos" Icon={MoreSellerIcon} Items={[]}/>
+            <ProductList Id="4" Title="Queima de Etoque" Icon={MoreSellerIcon} Items={[]}/>
         </div>
     );
 };

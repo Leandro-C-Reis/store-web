@@ -1,9 +1,10 @@
 import CardIcon from '@/public/assets/card';
 import NoImage from '@/public/assets/no-image';
 
-const ProductCard = ({ className = ''}) => {
+const ProductCard = ({ className = '', item}) => {
     return (
-        <li className={`${className} w-160px h-270px border rounded-md p-6 flex flex-col items-center justify-center text-gray-400 bg-white shadow-md cursor-pointer`}>
+        <div className={`${className} w-180px h-270px border rounded-md p-6 flex flex-col items-center justify-center text-gray-400 bg-white shadow-md cursor-pointer`}>
+            {item}
             <div className="flex align-center justify-center">
                 <div className="w-90px h-110px bg-gray-300 flex items-center justify-center">
                     <NoImage className="w-24px h-24px fill-current text-gray-50"/>
@@ -26,7 +27,7 @@ const ProductCard = ({ className = ''}) => {
                     <span>12x de R$00,00 sem juros</span>
                 </div>
             </div>
-        </li>
+        </div>
     );
 }
 
