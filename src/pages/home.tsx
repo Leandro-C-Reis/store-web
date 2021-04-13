@@ -1,5 +1,3 @@
-import 'tailwindcss/tailwind.css';
-
 import Header from '@/components/header';
 import ProductList from '@/components/home/product-list';
 

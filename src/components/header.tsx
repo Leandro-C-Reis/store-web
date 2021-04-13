@@ -1,4 +1,3 @@
-import 'tailwindcss/tailwind.css';
 import Link from 'next/link';
 
 import CartIcon from '@/public/assets/cart';

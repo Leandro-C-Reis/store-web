@@ -1,4 +1,3 @@
-import 'tailwindcss/tailwind.css'
 import { useState, useEffect } from 'react';
 
 import Card from './product-card';
