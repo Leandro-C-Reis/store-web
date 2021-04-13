@@ -27,7 +27,7 @@ const Header = () => {
                             </span>
                         </a>
                     </Link>
-                    <Link href="/">
+                    <Link href="/login">
                         <a className="flex align-center justify-center ml-2">
                             <PersonIcon className="fill-current mx-2 w-24px h-24px" />
                             <span>

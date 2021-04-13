@@ -14,11 +14,14 @@ module.exports = {
         '12px': '12px'
       },
       height: {
+        '350px': '350px',
+        '300px': '300px',
         '270px': '270px',
         '110px': '110px',
         '100px': '100px',
         '50px': '50px',
         '60px': '60px',
+        '30px': '30px',
         '24px': '24px',
         '18px': '18px',
         '12px': '12px'

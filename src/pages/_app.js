@@ -1,3 +1,4 @@
+// import 'tailwindcss/tailwind.css';
 import '../styles/index.css';
 
 export default function MyApp({ Component, pageProps }) {
