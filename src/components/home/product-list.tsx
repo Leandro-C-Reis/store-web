@@ -40,7 +40,7 @@ const ProductList = ({ Title, Icon, Items, Id }) => {
                 <button onClick={handlePrev} style={{ outline: 'none' }}>
                     <Left className="w-50px h-50px fill-current cursor-pointer" />
                 </button>
-                <ul className="w-max overflow-hidden">
+                <ul className="w-max overflow-hidden h-350px">
                     <li className="w-max transition-all transform flex space-x-5" id={Id}>
                         <Card item={1}/>
                         <Card item={2}/>
