@@ -19,7 +19,7 @@ const Logged = () => {
                     <SearchIcon className="fill-current w-24px h-24px mr-6 cursor-pointer" />
                 </div>
                 <div className="bg-white h-auto w-1/12 flex align-center justify-evenly text-gray-500 relative">
-                    <Link href='/'>
+                    <Link href='/cart'>
                         <a className="flex align-center justify-center">
                             <CartIcon className="fill-current mx-2 w-24px h-24px" />
                         </a>

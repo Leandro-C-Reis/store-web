@@ -19,7 +19,7 @@ const UnLogged = () => {
                     <SearchIcon className="fill-current w-24px h-24px mr-6 cursor-pointer" />
                 </div>
                 <div className="bg-white h-auto w-auto flex align-center text-gray-500">
-                    <Link href='/'>
+                    <Link href='/login'>
                         <a className="flex align-center justify-center">
                             <CartIcon className="fill-current mx-2 w-24px h-24px" />
                             <span>
