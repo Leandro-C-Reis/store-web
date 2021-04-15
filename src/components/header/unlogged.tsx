@@ -4,7 +4,7 @@ import CartIcon from '@/public/assets/cart';
 import PersonIcon from '@/public/assets/person';
 import SearchIcon from '@/public/assets/search';
 
-const Header = () => {
+const UnLogged = () => {
     return (
         <header
             className="w-full h-100px bg-white m-0 p-0 border-b border-gray-400 flex font-ubuntu z-10 sticky top-0">
@@ -39,6 +39,6 @@ const Header = () => {
             </div>
         </header>
     );
-};
+}
 
-export default Header;
+export default UnLogged;

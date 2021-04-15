@@ -11,6 +11,7 @@ const SignUp = () => {
                 </a>
             </Link>
             <div className="flex flex-col items-center justify-evenly border-2 border-gray-500 rounded-lg w-500px h-350px bg-white">
+                <input className="border-2 border-gray-500 rounded-md w-300px px-3 py-1 text-base" type="text" placeholder="Nome" />
                 <input className="border-2 border-gray-500 rounded-md w-300px px-3 py-1 text-base" type="email" placeholder="Email" />
                 <input className="border-2 border-gray-500 rounded-md w-300px px-3 py-1 text-base" type="password" placeholder="Senha" />
                 <input className="border-2 border-gray-500 rounded-md w-300px px-3 py-1 text-base" type="password" placeholder="Confirme a senha" />

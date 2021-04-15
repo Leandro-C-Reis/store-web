@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-import Header from '@/components/header';
+import Header from '@/components/header/index';
 import NoImage from '@/public/assets/no-image';
 import Up from '@/public/assets/arrows/up';
 import Down from '@/public/assets/arrows/down';
@@ -36,7 +36,7 @@ const Product = () => {
 
     return (
         <div className="bg-gray-100">
-            <Header />
+            <Header user={{}} />
             <div className="flex h-screen">
                 <div className="w-7/12 flex justify-end">
                     <div className="h-full w-7/12 flex flex-col justify-center pr-16">
