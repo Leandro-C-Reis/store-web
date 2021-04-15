@@ -5,9 +5,8 @@ import NoImage from '@/public/assets/no-image';
 
 const ProductCard = ({ className = '', item }) => {
     return (
-        <Link href='/product'>
+        <Link as={'/product'} href="/product">
             <a className={`${className} w-180px h-300px border rounded-md p-2 flex flex-col items-center justify-center text-gray-400 bg-white shadow-md cursor-pointer hover:shadow-xl`}>
-                {/* {item} */}
                 <div className="flex align-center justify-center">
                     <div className="w-90px h-110px bg-gray-300 flex items-center justify-center">
                         <NoImage className="w-24px h-24px fill-current text-gray-50" />
@@ -18,10 +17,10 @@ const ProductCard = ({ className = '', item }) => {
                     <h3 className="text-base text-gray-600">Titulo</h3>
                     <span className="text-xs flex items-center">
                         A partir de
-                        <h4 className="text-sm text-yellow-500 ml-1">
+                        <h4 className="text-base text-blue-700 ml-1">
                                 R$
                         </h4>
-                            <h3 className="text-base text-yellow-500 ml-1">
+                            <h3 className="text-lg text-blue-700 ml-1">
                                 000,00
                         </h3>
                     </span>

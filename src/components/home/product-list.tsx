@@ -26,8 +26,20 @@ const ProductList = ({ Title, Icon, Items, Id }) => {
 
     useEffect(() => {
         const li = document.getElementById(Id);
+        const Left = document.getElementById(`left-${Id}`);
 
         li.style.transform = `translateX(-${translated}px)`;
+
+        if (translated == 0)
+        {
+            Left.style.opacity = '0';
+            Left.style.cursor = 'auto';
+        }
+        else {
+            Left.style.opacity = '1';
+            Left.style.cursor = 'pointer';
+        }
+
     }, [translated]);
 
     return (
@@ -37,8 +49,8 @@ const ProductList = ({ Title, Icon, Items, Id }) => {
                 <div>{Title}</div>
             </div>
             <div className="flex items-center w-full overflow-hidden">
-                <button onClick={handlePrev} style={{ outline: 'none' }}>
-                    <Left className="w-50px h-50px fill-current cursor-pointer" />
+                <button id={`left-${Id}`} className="transition-all" onClick={handlePrev} style={{ outline: 'none' }}>
+                    <Left className="w-50px h-50px fill-current" />
                 </button>
                 <ul className="w-max overflow-hidden h-350px">
                     <li className="w-max transition-all transform flex space-x-5" id={Id}>
