@@ -45,7 +45,7 @@ const ProductList = ({ Title, Icon, Items, Id }) => {
     return (
         <div className="w-full h-96 bg-gray-100 text-gray-600">
             <div className="flex items-center p-2 relative">
-                <Icon className="w-18px h-18px fill-current ml-16 mr-1" />
+                <Icon className="w-18px h-18px fill-current ml-12 mr-1" />
                 <div>{Title}</div>
             </div>
             <div className="flex items-center w-full overflow-hidden">

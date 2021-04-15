@@ -24,7 +24,7 @@ const ProductCard = ({ className = '', item }) => {
                                 000,00
                         </h3>
                     </span>
-                    <div className="text-gray-500 flex items-start text-xs">
+                    <div className="text-gray-500 flex items-center text-xs">
                         <CardIcon className="w-18px h-18px fill-current" />
                         <span>12x de R$00,00 sem juros</span>
                     </div>
