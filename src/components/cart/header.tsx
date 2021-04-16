@@ -5,7 +5,7 @@ import UserIcon from '@/public/assets/user';
 const Header = () => {
 
     return (
-        <header className="w-full h-80px px-24 flex items-center justify-between " style={{ backgroundColor: '#6781DE' }}>
+        <header className="w-full h-80px px-24 flex items-center justify-between sticky top-0 z-10" style={{ backgroundColor: '#6781DE' }}>
             <div className="text-gray-100 flex">
                 <details className="relative">
                     <summary className="inline outline-none cursor-pointer">
@@ -13,7 +13,7 @@ const Header = () => {
                     </summary>
                     <section className="absolute w-auto h-auto p-4 bg-white border rounded border-gray-500 text-gray-500">
                         <div>
-                            <Link href="/">
+                            <Link href="/profile">
                                 <a>Configurações</a>
                             </Link>
                         </div>

@@ -38,7 +38,7 @@ const Logged = () => {
                         </summary>
                         <section className="border border-gray-500 rounded bg-white p-4 absolute right-0">
                             <div>
-                                <Link href="/">
+                                <Link href="/profile">
                                     <a>Configurações</a>
                                 </Link>
                             </div>
