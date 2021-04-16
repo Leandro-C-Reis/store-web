@@ -60,7 +60,11 @@ module.exports = {
         '100px': '100px'
       },
       fontFamily: {
-        'ubuntu': ['Ubuntu','"Times New Roman"']
+        'ubuntu': ['Ubuntu','"Times New Roman"'],
+        'poppins': ['Poppins', '"Times New Roman"']
+      },
+      backgroundColor: {
+        'orange': '#FF9900'
       },
       fill: {
         current: 'currentColor'

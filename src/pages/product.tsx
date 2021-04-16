@@ -2,9 +2,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 import Header from '@/components/header/index';
+import ProductCounter from '@/components/product-counter';
 import NoImage from '@/public/assets/no-image';
-import Up from '@/public/assets/arrows/up';
-import Down from '@/public/assets/arrows/down';
 
 const Product = () => {
     const [quantity, setQuantity] = useState(1);
@@ -94,21 +93,7 @@ const Product = () => {
                         </div>
                         <div className="w-full h-2/4 flex items-center justify-between px-8">
                             <button className="bg-blue-700 text-white w-240px h-50px rounded-md" style={{ outline: 'none' }} >COMPRAR</button>
-                            <div className="border border-gray-400 w-70px h-50px rounded-lg flex text-gray-500">
-                                <div className="w-2/4 h-full flex items-center justify-center">
-                                    <h1>
-                                        {quantity}
-                                    </h1>
-                                </div>
-                                <div className="w-2/4 h-full flex flex-col justify-center">
-                                    <button onClick={() => handleChangeQuantity(true)} style={{ outline: 'none' }}>
-                                        <Up className="w-12px h-12px stroke-current ml-1" />
-                                    </button>
-                                    <button onClick={() => handleChangeQuantity(false)} style={{ outline: 'none' }}>
-                                        <Down className="w-12px h-12px stroke-current ml-1" />
-                                    </button>
-                                </div>
-                            </div>
+                            <ProductCounter />
                         </div>
                     </div>
                 </div>
