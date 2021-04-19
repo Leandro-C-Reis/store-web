@@ -64,7 +64,8 @@ module.exports = {
         'poppins': ['Poppins', '"Times New Roman"']
       },
       backgroundColor: {
-        'orange': '#FF9900'
+        'orange': '#FF9900',
+        'dblue': "#6781DE"
       },
       fill: {
         current: 'currentColor'

@@ -27,6 +27,7 @@ const ProductList = ({ Title, Icon, Items, Id }) => {
     useEffect(() => {
         const li = document.getElementById(Id);
         const Left = document.getElementById(`left-${Id}`);
+        const Right = document.getElementById(`right-${Id}`);
 
         li.style.transform = `translateX(-${translated}px)`;
 
@@ -35,10 +36,18 @@ const ProductList = ({ Title, Icon, Items, Id }) => {
             Left.style.opacity = '0';
             Left.style.cursor = 'auto';
         }
+        else if (translated >= (items - MAX_ITEMS) * ITEM_LEN)
+        {
+            Right.style.opacity = '0';
+            Right.style.cursor = 'auto'
+        }
         else {
             Left.style.opacity = '1';
+            Right.style.opacity = '1';
             Left.style.cursor = 'pointer';
+            Right.style.cursor = 'pointer';
         }
+
 
     }, [translated]);
 
@@ -67,7 +76,7 @@ const ProductList = ({ Title, Icon, Items, Id }) => {
                         <Card item={11}/>
                     </li>
                 </ul>
-                <button onClick={handleNext} style={{ outline: 'none' }}>
+                <button id={`right-${Id}`} className="transition-all" onClick={handleNext} style={{ outline: 'none' }}>
                     <Right className="w-50px h-50px fill-current cursor-pointer" />
                 </button>
             </div>

@@ -6,17 +6,6 @@ import ProductCounter from '@/components/product-counter';
 import NoImage from '@/public/assets/no-image';
 
 const Product = () => {
-    const [quantity, setQuantity] = useState(1);
-
-    function handleChangeQuantity(sum: boolean) {
-        if (sum) {
-            return setQuantity(quantity + 1);
-        }
-
-        if (quantity > 1) {
-            return setQuantity(quantity - 1);
-        }
-    }
 
     function handleSelectImage(element: any) {
         const classNameActive = element.className.replace(/bg-\w*-\w*/g, 'bg-blue-700');

@@ -15,7 +15,7 @@ const SignUp = () => {
                 <input className="border-2 border-gray-500 rounded-md w-300px px-3 py-1 text-base" type="email" placeholder="Email" />
                 <input className="border-2 border-gray-500 rounded-md w-300px px-3 py-1 text-base" type="password" placeholder="Senha" />
                 <input className="border-2 border-gray-500 rounded-md w-300px px-3 py-1 text-base" type="password" placeholder="Confirme a senha" />
-                <button className="rounded-full w-300px h-30px bg-green-600 text-gray-100 text-base font-medium" style={{ outline: 'none' }}>
+                <button className="rounded-full w-300px h-30px bg-dblue text-gray-100 text-base font-medium" style={{ outline: 'none' }}>
                     REGISTRAR
                 </button>
                 <Link href="/login">
