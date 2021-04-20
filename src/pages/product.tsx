@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import Header from '@/components/header/index';
@@ -6,15 +5,6 @@ import ProductCounter from '@/components/product-counter';
 import NoImage from '@/public/assets/no-image';
 
 const Product = () => {
-    const [user, setUser] = useState({});
-    
-    function getProps()
-    {
-        const user = localStorage.getItem('user');
-        setUser(JSON.parse(user));
-    }
-
-    useEffect(() => getProps(), []);
     
     function handleSelectImage(element: any) {
         const classNameActive = element.className.replace(/bg-\w*-\w*/g, 'bg-blue-700');
@@ -33,7 +23,7 @@ const Product = () => {
 
     return (
         <div className="bg-gray-100">
-            <Header user={user} />
+            <Header />
             <div className="flex h-screen">
                 <div className="w-7/12 flex justify-end">
                     <div className="h-full w-7/12 flex flex-col justify-center pr-16">
