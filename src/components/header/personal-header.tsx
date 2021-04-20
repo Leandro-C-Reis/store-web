@@ -6,14 +6,13 @@ import { useEffect, useState } from 'react';
 
 const Header = () => {
     const [user, setUser] = useState<any>();
-    
+
     useEffect(() => {
         const userLocal = JSON.parse(localStorage.getItem('user'));
         setUser(userLocal);
     }, []);
 
-    if (user)
-    {
+    if (user) {
         return (
             <header className="w-full h-80px px-24 flex items-center justify-between sticky top-0 z-10" style={{ backgroundColor: '#6781DE' }}>
                 <div className="text-gray-100 flex">
@@ -26,7 +25,7 @@ const Header = () => {
                         </section>
                     </details>
                     <h1 className="ml-6 text-lg font-medium">
-                        Bem vindo {user.name}
+                        Bem vindo {user.name.split(' ')[0]}
                     </h1>
                 </div>
                 <Link href="/">

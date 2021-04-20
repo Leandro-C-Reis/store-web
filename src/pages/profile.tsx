@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 import Router from 'next/router';
+
+import { Address } from '@/@Types/API';
 import api from '@/services/store-api';
 import Header from '@/components/header/personal-header';
+
 import LoadingIcon from '@/public/assets/loading';
+import EditPencil from '@/public/assets/edit-pencil';
 
 const Profile = () => {
     const [user, setUser] = useState<any>();
@@ -33,17 +37,18 @@ const Profile = () => {
         getUser();
     }, []);
 
-    const Address = () => {
+    const Address = ({ address }: { address: Address }) => {
+
         return (
             <div className="w-full h-full flex relative border-b">
                 <div className="w-4/5 h-auto p-3 flex flex-col justify-around">
-                    <h3 className="text-lg text-gray-700">Rua, 123</h3>
+                    <h3 className="text-lg text-gray-700">{address.street}, 123</h3>
                     <p className="text-sm">Complemento</p>
-                    <p className="text-sm">Estado, Município 12345-000 (CEP)</p>
+                    <p className="text-sm">{address.uf}, {address.district} {address.zip_code} (CEP)</p>
                     <p className="text-sm">Nome Completo - (00) 90000-0000</p>
                 </div>
                 <div className="absolute top-3 right-5 cursor-pointer">
-                    Edit
+                    <EditPencil className="w-15px h-15px fill-current" />
                 </div>
             </div>
         );
@@ -83,21 +88,28 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <div className="my-6">
-                <h2 className="my-3">
-                    Endereços
-                        </h2>
-                <div className="w-800px h-140px border rounded-md bg-white text-gray-500 font-light">
-                    <Address />
-                    <Address />
-                </div>
-            </div>
+            {
+                user.addresses.length > 0 ? (
+                    <div className="my-6">
+                        <h2 className="my-3">
+                            Endereços
+                    </h2>
+                        <div className="w-800px h-140px border rounded-md bg-white text-gray-500 font-light">
+                            {
+                                user.addresses.map((address: Address) => {
+                                    return <Address address={address} />
+                                })
+                            }
+                        </div>
+                    </div>
+                ) : null
+            }
         </div>
     )
 
     const Loading = () => (
         <div className="w-40px h-40px absolute top-2/4">
-            <LoadingIcon className="stroke-current text-blue-400"/>
+            <LoadingIcon className="stroke-current text-blue-400" />
         </div>
     )
 

@@ -2,9 +2,13 @@ import Link from 'next/link';
 import Router from 'next/router';
 
 const Options = () => {
-    function handleLogout()
-    {
+    function handleLogout() {
         localStorage.clear();
+
+        if (Router.basePath === '/') {
+            return Router.reload();
+        }
+
         Router.push('/');
     }
 

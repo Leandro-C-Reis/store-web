@@ -1,19 +1,32 @@
 
 import Header from '@/components/header/personal-header';
 import Product from '@/components/cart/product';
+import { useEffect, useState } from 'react';
 
 const Cart = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const cartStr = localStorage.getItem('cart');
+
+        if (cartStr) {
+            const cart = JSON.parse(cartStr);
+            setProducts(cart);
+        }
+
+    }, []);
+
     return (
         <>
             <div className="h-auto bg-gray-100">
                 <Header />
                 <div className="h-auto w-full flex justify-center">
                     <div className="w-800px h-0 bg-gray-400 mr-3 mt-6 grid grid-cols-1 gap-6">
-                        <Product />
-                        <Product />
-                        <Product />
-                        <Product />
-                        <Product />
+                        {
+                            products.map(product => {
+                                return <Product />
+                            })
+                        }
                     </div>
                     <div className="w-350px flex flex-col items-center">
                         <div className="w-300px h-150px bg-white rounded my-6 flex flex-col items-center justify-evenly border border-gray-400">

@@ -1,11 +1,13 @@
 import Link from 'next/link';
+import Router from 'next/router';
 
+import { Product as P } from '@/@Types/API';
 import Header from '@/components/header/index';
 import ProductCounter from '@/components/product-counter';
 import NoImage from '@/public/assets/no-image';
 
 const Product = () => {
-    
+
     function handleSelectImage(element: any) {
         const classNameActive = element.className.replace(/bg-\w*-\w*/g, 'bg-blue-700');
         const className = element.className.replace(/bg-\w*-\w*/g, 'bg-gray-300');
@@ -19,6 +21,31 @@ const Product = () => {
 
         const images = document.getElementById('images');
         images.style.transform = `translateX(-${270 * element.id}px)`;
+    }
+
+    function handleAddItem() {
+        const cartStr = localStorage.getItem('cart');
+
+        const product: P = {
+            id: '1',
+            description: 'description',
+            title: 'title',
+            created_at: 'xxxx-xx-xxx',
+            updated_at: 'xxxx-xx-xxx',
+            value: 339.90
+        }
+
+        if (!cartStr) {
+            localStorage.setItem('cart', JSON.stringify([product]));
+        }
+        else {
+            const cart = JSON.parse(cartStr);
+
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        Router.push('/cart');
     }
 
     return (
@@ -80,7 +107,7 @@ const Product = () => {
                                 type="text" placeholder="Cupom de desconto..." />
                         </div>
                         <div className="w-full h-2/4 flex items-center justify-between px-8">
-                            <button className="bg-blue-700 text-white w-240px h-50px rounded-md" style={{ outline: 'none' }} >COMPRAR</button>
+                            <button onClick={() => handleAddItem()} className="bg-blue-700 text-white w-240px h-50px rounded-md" style={{ outline: 'none' }} >COMPRAR</button>
                             <ProductCounter />
                         </div>
                     </div>

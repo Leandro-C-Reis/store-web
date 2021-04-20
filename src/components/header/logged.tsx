@@ -26,8 +26,8 @@ const Logged = () => {
                             <CartIcon className="fill-current mx-2 w-24px h-24px" />
                         </a>
                     </Link>
-                    <div className="absolute w-20px h-15px bg-blue-700 top-0 inset-x-1/3 rounded-full">
-                        <h1 className="text-white font-medium text-center text-xs" >
+                    <div className="absolute w-20px h-15px bg-yellow-400 top-0 inset-x-1/3 rounded-full">
+                        <h1 className="text-blue-700 font-medium text-center text-xs" >
                             9+
                         </h1>
                     </div>
