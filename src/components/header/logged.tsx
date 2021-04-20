@@ -1,16 +1,18 @@
 import Link from 'next/link';
+import Options from './user-options';
 
 import CartIcon from '@/public/assets/cart';
 import UserIcon from '@/public/assets/user';
 import SearchIcon from '@/public/assets/search';
 
 const Logged = () => {
+
     return (
         <header
-            className="w-full h-100px bg-white m-0 p-0 border-b border-gray-400 flex font-ubuntu z-10 sticky top-0">
-            <div className="container bg-white mx-auto px-10 flex items-center justify-evenly">
+            className="w-full h-100px bg-dblue m-0 p-0 border-b border-gray-400 flex font-ubuntu z-10 sticky top-0">
+            <div className="container mx-auto px-10 flex items-center justify-evenly">
                 <Link href="/">
-                    <a className="bg-white w-300px h-60px border text-center">
+                    <a className="bg-gray-100 rounded-md w-300px h-60px border text-center">
                         logo
                     </a>
                 </Link>
@@ -18,7 +20,7 @@ const Logged = () => {
                     <input className="ml-6 w-5/6 outline-none" placeholder="Encontre seus produtos..." />
                     <SearchIcon className="fill-current w-24px h-24px mr-6 cursor-pointer" />
                 </div>
-                <div className="bg-white h-auto w-1/12 flex align-center justify-evenly text-gray-500 relative">
+                <div className="h-auto w-1/12 flex align-center justify-evenly text-white relative">
                     <Link href='/cart'>
                         <a className="flex align-center justify-center">
                             <CartIcon className="fill-current mx-2 w-24px h-24px" />
@@ -36,20 +38,8 @@ const Logged = () => {
                                 <UserIcon className="fill-current mx-2 w-24px h-24px" />
                             </div>
                         </summary>
-                        <section className="border border-gray-500 rounded bg-white p-4 absolute right-0">
-                            <div>
-                                <Link href="/profile">
-                                    <a>Configurações</a>
-                                </Link>
-                            </div>
-                            <div>
-                                <Link href="/">
-                                    <a>Suporte</a>
-                                </Link>
-                            </div>
-                            <button>
-                                Sair
-                            </button>
+                        <section className="border border-gray-500 rounded bg-white p-4 absolute right-0 text-gray-500">
+                            <Options />
                         </section>
                     </details>
                 </div>

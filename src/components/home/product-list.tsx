@@ -77,7 +77,7 @@ const ProductList = ({ Title, Icon, Items, Id }) => {
                     </li>
                 </ul>
                 <button id={`right-${Id}`} className="transition-all" onClick={handleNext} style={{ outline: 'none' }}>
-                    <Right className="w-50px h-50px fill-current cursor-pointer" />
+                    <Right className="w-50px h-50px fill-current" />
                 </button>
             </div>
         </div>

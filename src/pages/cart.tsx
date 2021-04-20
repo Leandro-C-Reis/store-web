@@ -1,5 +1,5 @@
 
-import Header from '@/components/cart/header';
+import Header from '@/components/header/personal-header';
 import Product from '@/components/cart/product';
 
 const Cart = () => {

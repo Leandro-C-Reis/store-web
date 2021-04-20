@@ -1,16 +1,15 @@
 import Link from 'next/link';
 
-import CartIcon from '@/public/assets/cart';
 import PersonIcon from '@/public/assets/person';
 import SearchIcon from '@/public/assets/search';
 
 const UnLogged = () => {
     return (
         <header
-            className="w-full h-100px bg-white m-0 p-0 border-b border-gray-400 flex font-ubuntu z-10 sticky top-0">
-            <div className="container bg-white mx-auto px-10 flex items-center justify-evenly">
+            className="w-full h-100px bg-dblue m-0 p-0 border-b border-gray-400 flex font-ubuntu z-10 sticky top-0">
+            <div className="container mx-auto px-10 flex items-center justify-evenly">
                 <Link href="/">
-                    <a className="bg-white w-300px h-60px border text-center">
+                    <a className="bg-gray-100 rounded-md w-300px h-60px border text-center">
                         logo
                     </a>
                 </Link>
@@ -18,15 +17,7 @@ const UnLogged = () => {
                     <input className="ml-6 w-5/6 outline-none" placeholder="Encontre seus produtos..."/>
                     <SearchIcon className="fill-current w-24px h-24px mr-6 cursor-pointer" />
                 </div>
-                <div className="bg-white h-auto w-auto flex align-center text-gray-500">
-                    <Link href='/login'>
-                        <a className="flex align-center justify-center">
-                            <CartIcon className="fill-current mx-2 w-24px h-24px" />
-                            <span>
-                                Meu Carrinho
-                            </span>
-                        </a>
-                    </Link>
+                <div className="h-auto w-auto flex align-center text-white">
                     <Link href="/login">
                         <a className="flex align-center justify-center ml-2">
                             <PersonIcon className="fill-current mx-2 w-24px h-24px" />
