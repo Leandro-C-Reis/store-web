@@ -5,7 +5,7 @@ const Options = () => {
     function handleLogout() {
         localStorage.clear();
 
-        if (Router.basePath === '/') {
+        if (Router.route === '/') {
             return Router.reload();
         }
 
@@ -24,7 +24,7 @@ const Options = () => {
                     <a>Suporte</a>
                 </Link>
             </div>
-            <button onClick={() => handleLogout()}>
+            <button onClick={() => handleLogout()} style={{ outline: 'none' }} >
                 Sair
             </button>
         </>

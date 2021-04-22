@@ -33,6 +33,18 @@ const Profile = () => {
         setUser(response.data);
     }
 
+    function handleCancel() {
+        const Edit = document.getElementById('edit');
+
+        Edit.className += ' hidden'
+    }
+
+    function handleEdit() {
+        const Edit = document.getElementById('edit');
+
+        Edit.className = Edit.className.replace(' hidden', '');
+    }
+
     useEffect(() => {
         getUser();
     }, []);
@@ -47,9 +59,9 @@ const Profile = () => {
                     <p className="text-sm">{address.uf}, {address.district} {address.zip_code} (CEP)</p>
                     <p className="text-sm">Nome Completo - (00) 90000-0000</p>
                 </div>
-                <div className="absolute top-3 right-5 cursor-pointer">
+                <button onClick={() => handleEdit()} className="absolute top-3 right-5 cursor-pointer" style={{ outline: 'none' }} >
                     <EditPencil className="w-15px h-15px fill-current" />
-                </div>
+                </button>
             </div>
         );
     }
@@ -60,7 +72,7 @@ const Profile = () => {
             <div className="my-6">
                 <h2 className="my-3">
                     Dados pessoais
-                        </h2>
+                </h2>
                 <div className="w-800px h-100px border rounded-md bg-white text-gray-500 font-light">
                     <div className="w-full h-2/4 border-b px-6 flex items-center">
                         <div className="w-2/5 text-gray-700">
@@ -93,7 +105,7 @@ const Profile = () => {
                     <div className="my-6">
                         <h2 className="my-3">
                             Endereços
-                    </h2>
+                        </h2>
                         <div className="w-800px h-140px border rounded-md bg-white text-gray-500 font-light">
                             {
                                 user.addresses.map((address: Address) => {
@@ -120,6 +132,22 @@ const Profile = () => {
                 {
                     user ? <Body /> : <Loading />
                 }
+
+                <div id="edit" className="z-10 absolute top-0 h-screen w-screen bg-gray-300 bg-opacity-50 flex items-center justify-center hidden">
+                    <div className="w-3/12 h-auto bg-white p-3 border-2 rounded-md border-gray-400">
+                        <div className="flex flex-col">
+                            <h1 className="text-sm my-2 text-gray-500">
+                                Field Name:
+                            </h1>
+                            <input className="border rounded-md w-4/5 px-2 py-1 text-sm" type="text" placeholder="New value" />
+                        </div>
+
+                        <div className="w-full flex items-center justify-evenly text-white my-4">
+                            <button onClick={() => handleCancel()} className="bg-red-400 rounded px-3 font-medium">Cancelar</button>
+                            <button className="bg-green-400 rounded px-3 font-medium">Salvar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

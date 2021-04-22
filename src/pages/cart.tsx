@@ -12,6 +12,7 @@ const Cart = () => {
         if (cartStr) {
             const cart = JSON.parse(cartStr);
             setProducts(cart);
+            console.log(cart);
         }
 
     }, []);
@@ -23,8 +24,8 @@ const Cart = () => {
                 <div className="h-auto w-full flex justify-center">
                     <div className="w-800px h-0 bg-gray-400 mr-3 mt-6 grid grid-cols-1 gap-6">
                         {
-                            products.map(product => {
-                                return <Product />
+                            products.map((product, idx) => {
+                                return <Product key={idx} />
                             })
                         }
                     </div>
