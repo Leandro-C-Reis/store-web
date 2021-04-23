@@ -108,8 +108,8 @@ const Profile = () => {
                         </h2>
                         <div className="w-800px h-140px border rounded-md bg-white text-gray-500 font-light">
                             {
-                                user.addresses.map((address: Address) => {
-                                    return <Address address={address} />
+                                user.addresses.map((address: Address, idx: number) => {
+                                    return <Address address={address} key={idx} />
                                 })
                             }
                         </div>

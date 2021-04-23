@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Router from 'next/router';
 
-import { Product as P } from '@/@Types/API';
+import { IProduct } from '@/@Types/API';
 import Header from '@/components/header/index';
 import ProductCounter from '@/components/product-counter';
 import NoImage from '@/public/assets/no-image';
@@ -26,13 +26,17 @@ const Product = () => {
     function handleAddItem() {
         const cartStr = localStorage.getItem('cart');
 
-        const product: P = {
-            id: '1',
+        const product: IProduct = {
+            id: `${Math.random()}`,
             description: 'description',
             title: 'title',
             created_at: 'xxxx-xx-xxx',
             updated_at: 'xxxx-xx-xxx',
-            value: 339.90
+            value: Math.floor(Math.random() * (990 - 50) + 50),
+            inventory: {
+                amount: Math.floor(Math.random() * (10 - 1) + 1),
+                id: `${Math.random()}`
+            }
         }
 
         if (!cartStr) {
@@ -108,7 +112,7 @@ const Product = () => {
                         </div>
                         <div className="w-full h-2/4 flex items-center justify-between px-8">
                             <button onClick={() => handleAddItem()} className="bg-blue-700 text-white w-240px h-50px rounded-md" style={{ outline: 'none' }} >COMPRAR</button>
-                            <ProductCounter />
+                            <ProductCounter max={100} />
                         </div>
                     </div>
                 </div>

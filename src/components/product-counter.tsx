@@ -3,15 +3,15 @@ import { useState } from 'react';
 import Up from '@/public/assets/arrows/up';
 import Down from '@/public/assets/arrows/down';
 
-const ProductCounter = () => {
+const ProductCounter = ({ max }) => {
     const [quantity, setQuantity] = useState(1);
 
     function handleChangeQuantity(sum: boolean) {
-        if (sum) {
+        if (sum && quantity < max) {
             return setQuantity(quantity + 1);
         }
 
-        if (quantity > 1) {
+        if (!sum && quantity > 1) {
             return setQuantity(quantity - 1);
         }
     }

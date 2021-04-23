@@ -1,8 +1,14 @@
-
+import { IProduct } from '@/@Types/API';
 import ProductCounter from '@/components/product-counter';
 import Close from '@/public/assets/close';
+import { useEffect } from 'react';
 
-const Product = () => {
+interface Props {
+    product: IProduct;
+    callback: Function;
+}
+
+const Product = ({ product, callback }: Props) => {
     return (
         <div className="w-700px h-75px bg-white border border-gray-400 rounded flex items-center justify-between px-5">
             <div className="flex h-full items-center">
@@ -12,7 +18,7 @@ const Product = () => {
                 <div className="h-full ml-6 flex flex-col justify-around">
                     <div className="flex items-center font-medium italic">
                         <h1>
-                            Titulo
+                            {product.title}
                         </h1>
                         <span className="mx-3">
                             {'>'}
@@ -23,7 +29,7 @@ const Product = () => {
                     </div>
                     <div className="text-xs flex items-center">
                         <p>
-                            Descrição asbdsadadasdasdsad ...
+                            {product.description}
                         </p>
                     </div>
                 </div>
@@ -32,17 +38,17 @@ const Product = () => {
             <div className="flex h-full items-center">
                 <div className="h-full flex flex-col items-end justify-around mr-6">
                     <h1 className="bsolute right-0 top-0 font-medium">
-                        R$ 000,00
+                        R$ {`${product.value}`.split('.').join(',')}
                     </h1>
                     <p className="bsolute right-0 bottom-0 text-xs">
-                        Unidades disponíveis: 1
+                        Unidades disponíveis: {product.inventory.amount}
                     </p>
                 </div>
                 <div className="flex items-center h-full">
                     <div className="mr-5">
-                        <ProductCounter />
+                        <ProductCounter max={product.inventory.amount} />
                     </div>
-                    <span className="cursor-pointer">
+                    <span onClick={() => callback(product.id)} className="cursor-pointer">
                         <Close className="w-15px h-15px fill-current text-red-500" />
                     </span>
                 </div>

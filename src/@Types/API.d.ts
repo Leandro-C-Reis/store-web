@@ -1,5 +1,5 @@
 
-export interface Address {
+export interface IAddress {
     id: string;
     user_id: string;
     zip_code: string;
@@ -15,16 +15,16 @@ export interface Address {
     updated_at: string;
 }
 
-export interface User {
+export interface IUser {
     id: string;
     name: string;
     email: string;
     created_at: string;
     updated_at: string;
-    addresses: [Address]
+    addresses: [IAddress]
 }
 
-export interface Order {
+export interface IOrder {
     id: string;
     address_id: string;
     user_id: string;
@@ -39,23 +39,23 @@ export interface Order {
     }]
 }
 
-export interface Product {
+export interface IProduct {
     id: string;
     title: string;
     value: number;
     description: string;
     created_at: string;
     updated_at: string;
-    inventory?: Inventory;
-    tags?: [Tag]
+    inventory?: IInventory;
+    tags?: [ITag]
 }
 
-interface Inventory {
+interface IInventory {
     id: string;
     amount: number;
 }
 
-interface Tag {
+interface ITag {
     id: string;
     tag: string;
     product_id: string;

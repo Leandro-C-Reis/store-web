@@ -12,10 +12,17 @@ const Cart = () => {
         if (cartStr) {
             const cart = JSON.parse(cartStr);
             setProducts(cart);
-            console.log(cart);
         }
-
     }, []);
+
+    function handleDeleteProduct(id: string) {
+        const cartStr = localStorage.getItem('cart');
+        const cart = JSON.parse(cartStr);
+
+        const newCart = cart.filter(product => product.id !== id)
+        localStorage.setItem('cart', JSON.stringify(newCart));
+        setProducts(newCart);
+    }
 
     return (
         <>
@@ -25,7 +32,7 @@ const Cart = () => {
                     <div className="w-800px h-0 bg-gray-400 mr-3 mt-6 grid grid-cols-1 gap-6">
                         {
                             products.map((product, idx) => {
-                                return <Product key={idx} />
+                                return <Product product={product} key={idx} callback={handleDeleteProduct} />
                             })
                         }
                     </div>

@@ -35,7 +35,7 @@ const Products = () => {
             <div className="w-1/5">
                 <div className="border rounded w-11/12 bg-white">
                     <div>
-                        Preços
+                        Filtros
                     </div>
                 </div>
             </div>
@@ -53,10 +53,27 @@ const Products = () => {
                         <h3>
                             Ordenação
                         </h3>
-                        <details>
+                        <details >
                             <summary className="inline cursor-pointer bg-white border rounded border-gray-500 px-4">
-                                Filtrar
+                                Ordenar
                             </summary>
+                            <section className="absolute bg-white border rounded border-gray-500 p-3">
+                                <div >
+                                    Maior Preço
+                                </div>
+                                <div>
+                                    Menor Preço
+                                </div>
+                                <div>
+                                    Mais vendidos
+                                </div>
+                                <div>
+                                    Marca A-Z
+                                </div>
+                                <div>
+                                    Marca Z-A
+                                </div>
+                            </section>
                         </details>
                     </div>
                 </div>
