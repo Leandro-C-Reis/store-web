@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Router from 'next/router';
 
-import { Address } from '@/@Types/API';
+import { IAddress } from '@/@Types/API';
 import api from '@/services/store-api';
 import Header from '@/components/header/personal-header';
 
@@ -49,7 +49,7 @@ const Profile = () => {
         getUser();
     }, []);
 
-    const Address = ({ address }: { address: Address }) => {
+    const Address = ({ address }: { address: IAddress }) => {
 
         return (
             <div className="w-full h-full flex relative border-b">
@@ -108,7 +108,7 @@ const Profile = () => {
                         </h2>
                         <div className="w-800px h-140px border rounded-md bg-white text-gray-500 font-light">
                             {
-                                user.addresses.map((address: Address, idx: number) => {
+                                user.addresses.map((address: IAddress, idx: number) => {
                                     return <Address address={address} key={idx} />
                                 })
                             }
